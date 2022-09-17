@@ -1,0 +1,290 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+main{
+    width: 100%;
+    height: 100vh;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bigbox{
+    width: 500px;
+    height: 450px;
+    background-color: #eee;
+    margin-top:150px ;
+    position: relative;
+}
+
+.box-input{
+    display: flex;
+    flex-direction: column;
+}
+
+.box-input>span:nth-child(1){
+    margin-top: 150px;
+    margin-left: 5%;
+    font-weight: bold;
+    font-size: 15px;
+}
+.box-input>span:nth-of-type(2){
+    margin-left: 5%;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+
+#cardnumber,
+#cardholder{
+    height: 30px;
+    width: 95%;
+    border-radius: 10px;
+    margin-left:2.5%;
+    border: none;
+    padding-left: 10px;
+    border: 1px solid black;
+    margin-top: 10px;
+    
+}
+
+
+.date{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+
+.month,
+.year,
+.cvv2{
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 10px;
+    
+}
+
+select,
+#cvv2{
+    margin-top: 10px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+#cvv2{
+    padding-left: 10px;
+}
+
+
+button{
+
+    width: 95%;
+    margin-left: 2.5%;
+    
+    background: linear-gradient(45deg,blueviolet,deeppink );
+    border: none;
+    font-size: 20px;
+    color:white;
+    padding: 10px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+button:hover{
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+
+.card-box{
+    width: 400px;
+    height:200px;
+    position: absolute;
+    left: 10%;
+    top: -20%;
+}
+
+.front{
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg,blueviolet,deeppink );
+    backface-visibility: hidden;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: 2s;
+}
+
+
+.card-box>.front>.img{
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: space-between;
+    background: linear-gradient(45deg,blueviolet,deeppink );
+
+    
+}
+.card-box>.front>.img>.img-1{
+    width: 20%;
+    height: 80%;
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
+.card-box>.front>.img>.img-1>img{
+    width: 100%;
+    height: 100%;
+}
+.card-box>.front>.img>.img-2{
+    width: 30%;
+    height: 75%;
+    margin-top: 15px;
+    margin-right: 10px;
+
+}
+.card-box>.front>.img>.img-2>img{
+    width: 100%;
+    height: 100%;
+}
+
+.card-number{
+    background: linear-gradient(45deg,blueviolet,deeppink );
+    height: 20%;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.date2{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    height: 50px;
+}
+
+.mr{
+    width: 60%;
+    padding-left: 10px;
+}
+.mr>span{
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+#name{
+    color: white;
+    font-size: 12px;
+    margin-top: 10px;
+}
+.da{
+    width: 30%;
+    
+}
+.da>span{
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    margin-left: 30px;
+
+}
+.da>.tarikh{
+    padding-top: 10px;
+}
+.da>.tarikh>span{
+    color: white;
+    margin-left: 20px;
+
+}
+
+
+.back{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg,blueviolet,deeppink );
+    display: flex;
+    flex-direction: column;
+    transform: perspective(1000px) rotateY(180deg);
+    transition: 2s;
+    backface-visibility: hidden;
+
+}
+
+/* 
+.card-box:hover>.back{
+    transform: perspective(1000px) rotateY(0deg);
+    
+}
+.card-box:hover>.front{
+    transform: perspective(1000px) rotateY(180deg);
+    
+} */
+
+
+
+
+.back>.line{
+    width: 100%;
+    height: 50px;
+    margin-top: 15px;
+    background-color: black;
+}
+
+.back>.last-box{
+    width: 100%;
+    /* height: 100%; */
+    background: linear-gradient(45deg,blueviolet,deeppink );
+    display: flex;
+    flex-direction: column;
+  
+}
+
+.back>.last-box>span{
+    margin-top: 10px;
+    padding-left: 10px;
+    margin-left: 20px;
+    color: white;
+    font-weight: bold;
+    
+}
+.back>.last-box>.white-box{
+    width: 50%;
+    height: 30px;
+    background-color: white;
+    margin-top: 10px;
+    padding-left: 20px;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    margin-left: 20px;
+
+
+}
+.back>.last-box>img{
+    margin-top: 20px;
+    width: 120px;
+    height: 50px;
+    padding-left: 10px;
+    margin-left: 20px;
+    margin-bottom: 2px;
+
+}

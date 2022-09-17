@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/stylesheet/index.css">
+    <title>Credit Card</title>
+</head>
+
+<body>
+
+    <main>
+        <div class="bigbox">
+            <div class="card-box">
+                <div class="front">
+                    <div class="img">
+                        <div class="img-1"><img src="assets/img/chip.png" alt=""></div>
+                        <div class="img-2"><img src="assets/img/visa.png" alt=""></div>
+                    </div>
+
+
+                    <div class="card-number" id="crd">**** **** **** ****</div>
+                    <div class="date2">
+                        <div class="mr">
+                            <span>CARD HOLDER</span>
+                            <div class="name" id="name">FULLNAME</div>
+                        </div>
+                        <div class="da">
+                            <span>EXPIRES</span>
+                            <div class="tarikh">
+                                <span id="mm">MM</span>
+                                <span id="yy">YY</span>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="back">
+                    <div class="line"></div>
+                    <div class="last-box">
+                        <span>cvv2</span>
+                        <div class="white-box"></div>
+                        <img src="assets/img/visa.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="box-input">
+                <span>CARD NUMBER</span>
+                <input type="text" id="cardnumber" maxlength="19">
+                <span>CARD HOLDER</span>
+                <input type="text" id="cardholder">
+                <div class="date">
+                    <div class="month">
+                        <span>MONTH</span>
+                        <select name="" id="mah">
+                            <option value="month" selected disabled>month</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    </div>
+
+                    <div class="year">
+                        <span>YEAR</span>
+                        <select name="" id="sal">
+                            <option value="year" selected disabled>year</option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2026</option>
+                            <option value="2027">2027</option>
+                        </select>
+                    </div>
+
+                    <div class="cvv2">
+                        <span>CVV2</span>
+                        <input type="text" id="cvv2" maxlength="4">
+                    </div>
+
+                </div>
+
+
+                <button id="submit">submit</button>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <script>
+        let x = document.getElementById('crd')
+        let y = document.getElementById('name')
+        let year = document.getElementById('yy')
+        let month = document.getElementById('mm')
+        let cvv2box = document.getElementsByClassName('white-box')[0]
+        let submit = document.getElementById('submit')
+        
+
+        document.getElementById('cardnumber').addEventListener('keyup', function () {
+            x.innerHTML = this.value
+
+            if (this.value.length == 4 || this.value.length == 9 || this.value.length == 14) {
+                this.value += ' '
+                    
+            }
+            
+        })
+
+        document.getElementById('cardholder').addEventListener('input',function(){
+            y.innerHTML = this.value
+
+        })
+
+
+        document.getElementById('sal').addEventListener('click',function(){
+            year.innerHTML=sal.value
+        })
+
+
+        document.getElementById('mah').addEventListener('click',function(){
+            month.innerHTML=mah.value
+        })
+
+
+        document.getElementById('cvv2').addEventListener('focus',function(){
+            let front = document.getElementsByClassName('front')[0]
+            let back  = document.getElementsByClassName('back')[0]
+
+            front.style.transform = ' perspective(1000px) rotateY(180deg)'
+            back.style.transform = ' perspective(1000px) rotateY(0deg)'
+
+        })
+        document.getElementById('cvv2').addEventListener('focusout',function(){
+            let front = document.getElementsByClassName('front')[0]
+            let back  = document.getElementsByClassName('back')[0]
+
+            front.style.transform = ' perspective(1000px) rotateY(0deg)'
+            back.style.transform = ' perspective(1000px) rotateY(180deg)'
+
+        })
+
+        document.getElementById('cvv2').addEventListener('input',function(){
+
+            cvv2box.innerHTML=this.value
+
+        })
+
+        submit.addEventListener('click',function(){
+            x.innerHTML = '**** **** **** ****'
+            y.innerHTML = 'FULLNAME'
+            year.innerHTML='YY'
+            month.innerHTML='MM'
+            cvv2box.innerHTML=''
+            document.getElementById('cvv2').value=''
+            document.getElementById('mah').value='month'
+            document.getElementById('sal').value='year'
+            document.getElementById('cardholder').value=''
+            document.getElementById('cardnumber').value=''
+
+            alert('successful')
+        })
+
+
+
+
+
+
+        
+    </script>
+
+</body>
+
+
+
+
+</html>
