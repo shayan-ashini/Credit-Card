@@ -159,18 +159,23 @@
         })
 
         submit.addEventListener('click',function(){
-            x.innerHTML = '**** **** **** ****'
-            y.innerHTML = 'FULLNAME'
-            year.innerHTML='YY'
-            month.innerHTML='MM'
-            cvv2box.innerHTML=''
-            document.getElementById('cvv2').value=''
-            document.getElementById('mah').value='month'
-            document.getElementById('sal').value='year'
-            document.getElementById('cardholder').value=''
-            document.getElementById('cardnumber').value=''
+              if (cardnumber.value == '' || cardholder.value == '' || sal.value== '' || mah.value== '' || cvv2.value == '') {
+                alert('fill the form')
+            } else {
+                x.innerHTML = '**** **** **** ****'
+                y.innerHTML = 'FULLNAME'
+                year.innerHTML = 'YY'
+                month.innerHTML = 'MM'
+                cvv2box.innerHTML = ''
+                document.getElementById('cvv2').value = ''
+                document.getElementById('mah').value = 'month'
+                document.getElementById('sal').value = 'year'
+                document.getElementById('cardholder').value = ''
+                document.getElementById('cardnumber').value = ''
 
-            alert('successful')
+                alert('successful')
+            }
+            
         })
         
        
